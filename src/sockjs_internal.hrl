@@ -3,7 +3,7 @@
 
 -type(user_session() :: nonempty_string()).
 -type(emittable()    :: init|closed|{recv, binary()}).
--type(callback()     :: fun((user_session(), emittable(), any()) -> ok)).
+-type(callback()     :: module()|fun((user_session(), emittable(), any()) -> ok)).
 -type(logger()       :: fun((any(), req(), websocket|http) -> req())).
 
 -record(service, {prefix           :: nonempty_string(),
